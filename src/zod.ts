@@ -4,12 +4,26 @@ const schema = z.object({
     name: z.string().min(2),
     email: z.string().email(),
     age: z.number().min(18).max(120),
+    status: z.boolean(),
+    characteristics: z.array(
+        z.object({
+            name: z.string(),
+            value: z.number(),
+        })
+    ),
 });
 
-const data = {
+type User = z.infer<typeof schema>;
+
+const data: User = {
     name: 'Clarice',
     email: 'teste@email.com.br',
     age: 25,
+    status: true,
+    characteristics: [
+        { name: 'Height', value: 1.8 },
+        { name: 'Shoe size', value: 42 },
+    ],
 };
 
 const result = schema.safeParse(data);
