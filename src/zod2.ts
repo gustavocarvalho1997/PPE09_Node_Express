@@ -12,3 +12,11 @@ const exemplo1 = z.object({
     nulo: z.null(),
     indefinido: z.undefined(),
 });
+
+// Alguns exemplos de tipos de dados opcionais que podem ser usados
+// com o Zod.
+const exemplo2 = z.object({
+    name: z.string().optional(),
+    age: z.number().optional(),
+    active: z.boolean().optional(),
+});
