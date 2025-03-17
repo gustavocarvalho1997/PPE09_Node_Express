@@ -20,3 +20,10 @@ const exemplo2 = z.object({
     age: z.number().optional(),
     active: z.boolean().optional(),
 });
+
+// Alguns exemplos de tipos de dados literais que podem ser usados
+// com o Zod.
+const exemplo3 = z.object({
+    name: z.literal('Clarice'),
+    age: z.literal(25),
+});
