@@ -107,3 +107,9 @@ const exemplo10 = z.object({
     name: z.string().transform(value => value.toUpperCase()),
     email: z.string().transform(value => value.split('@')[1]),
 });
+
+// Exemplo de defauls com o Zod.
+const exemplo11 = z.object({
+    name: z.string().default('Clarice'),
+    age: z.number().default(25),
+});
