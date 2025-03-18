@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --env-file=.env --import=tsx --watch ./src/server.ts",
+    "server2": "node --import=tsx --watch ./src/server2.ts",
     "file": "node --import=tsx --watch ./src/file.ts",
     "zod": "node --import=tsx --watch ./src/zod.ts",
     "zod2": "node --import=tsx --watch ./src/zod2.ts"
