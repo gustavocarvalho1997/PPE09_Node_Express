@@ -93,3 +93,11 @@ const exemplo8 = z.object({
     age1: z.union([z.string(), z.number()]),
     age2: z.string().or(z.number()),
 });
+
+// Exemplo de tipos de dados assíncronos com o Zod.
+const exemplo9 = z.promise(
+    z.object({
+        name: z.string(),
+        age: z.number(),
+    })
+);
