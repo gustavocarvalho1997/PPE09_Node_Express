@@ -87,3 +87,9 @@ const employee = z.object({
 });
 
 const employedPerson = z.intersection(person, employee);
+
+// Exemplo de união de tipos de dados com o Zod.
+const exemplo8 = z.object({
+    age1: z.union([z.string(), z.number()]),
+    age2: z.string().or(z.number()),
+});
