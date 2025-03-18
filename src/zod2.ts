@@ -69,3 +69,9 @@ const exemplo6 = z.object({
 
     email: z.string().email('O email é inválido'),
 });
+
+// Alguns exemplos de tipos de dados enumerados que podem ser usados
+// com o Zod.
+const exemplo7 = z.object({
+    fuel: z.enum(['Gasolina', 'Etanol', 'Diesel']),
+});
