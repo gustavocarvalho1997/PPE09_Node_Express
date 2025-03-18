@@ -113,3 +113,10 @@ const exemplo11 = z.object({
     name: z.string().default('Clarice'),
     age: z.number().default(25),
 });
+
+// Exemplo de arrays com o Zod.
+const exemplo12 = z.object({
+    names: z.array(z.string()),
+    ages: z.array(z.number()),
+    active: z.array(z.boolean()),
+});
