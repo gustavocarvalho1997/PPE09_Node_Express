@@ -75,3 +75,15 @@ const exemplo6 = z.object({
 const exemplo7 = z.object({
     fuel: z.enum(['Gasolina', 'Etanol', 'Diesel']),
 });
+
+// Exemplo de interseção de tipos de dados com o Zod.
+const person = z.object({
+    name: z.string(),
+    age: z.number(),
+});
+
+const employee = z.object({
+    role: z.string(),
+});
+
+const employedPerson = z.intersection(person, employee);
