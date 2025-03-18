@@ -1,5 +1,6 @@
 import express from 'express';
 import z from 'zod';
+import { postsSchema } from './schemas/postsSchema';
 
 const server = express();
 
@@ -30,6 +31,22 @@ server.post('/user', (req, res) => {
     console.log(name, email, age);
 
     res.status(201).json({ message: 'Usuário criado com sucesso' });
+});
+
+server.get('/posts', async (req, res) => {
+    const request = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await request.json();
+
+    const result = postsSchema.safeParse(data);
+
+    if (!result.success) {
+        res.status(400).send(result.error.issues.map(issue => issue.message));
+        return;
+    }
+
+    const totalPosts = result.data.length;
+
+    res.json({ total: totalPosts });
 });
 
 server.listen(3001, () => {
