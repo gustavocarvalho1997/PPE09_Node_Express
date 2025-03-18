@@ -101,3 +101,9 @@ const exemplo9 = z.promise(
         age: z.number(),
     })
 );
+
+// Exemplo de transformação de dados com o Zod.
+const exemplo10 = z.object({
+    name: z.string().transform(value => value.toUpperCase()),
+    email: z.string().transform(value => value.split('@')[1]),
+});
