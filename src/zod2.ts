@@ -39,5 +39,20 @@ const exemplo4 = z.object({
     uuid: z.string().uuid(),
     ip: z.string().ip(),
     imagem: z.string().endsWith('.jpg'),
-    regra: z.string().regex(/[a-z]{2}/g)
+    regra: z.string().regex(/[a-z]{2}/g),
+});
+
+// Alguns exemplos de validações numéricas que podem ser usadas
+// com o Zod.
+const exemplo5 = z.object({
+    numero1: z.number().int().min(1).max(10),
+    numero2: z.number().nonnegative(),
+    numero3: z.number().positive(),
+    numero4: z.number().negative(),
+    numero5: z.number().nonpositive(),
+    numero6: z.number().gt(10),
+    numero7: z.number().lt(10),
+    numero8: z.number().gte(10),
+    numero9: z.number().lte(10),
+    numero10: z.number().multipleOf(2),
 });
