@@ -56,3 +56,16 @@ const exemplo5 = z.object({
     numero9: z.number().lte(10),
     numero10: z.number().multipleOf(2),
 });
+
+// Alguns exemplos de mensagens de erro personalizadas que podem ser usadas
+// com o Zod.
+const exemplo6 = z.object({
+    age: z
+        .number({
+            required_error: 'A idade é obrigatória',
+            invalid_type_error: 'A idade deve ser um número',
+        })
+        .gte(18, { message: 'A idade deve ser maior ou igual a 18' }),
+
+    email: z.string().email('O email é inválido'),
+});
